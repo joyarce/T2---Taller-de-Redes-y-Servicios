@@ -7,7 +7,7 @@ Para hacer uso de este sistema, se deben ubicar en la en la raíz del server y d
 En la consola del server correr:
 
 ```diff
-- text in red
+sudo docker build -t "server_v:dockerfile" .
 ```
 
 
