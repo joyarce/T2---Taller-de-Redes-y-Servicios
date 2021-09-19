@@ -1,0 +1,19 @@
+FROM ubuntu:20.04
+
+RUN apt-get -y update
+
+RUN apt-get -y upgrade
+
+RUN apt-get -y install dstat git net-tools
+
+RUN apt-get -y update
+
+RUN apt-get -y install python3-pip
+
+RUN python3 -m pip install 'smtpc[extended]'
+
+RUN apt-get install -y iputils-ping
+
+RUN git clone https://github.com/msztolcman/smtpc.git
+
+WORKDIR /smtpc.git
