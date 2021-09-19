@@ -1,0 +1,16 @@
+FROM ubuntu:18.04
+
+RUN apt-get -y update
+
+RUN apt-get -y upgrade
+
+RUN apt-get -y install dstat git net-tools iproute2 sudo npm vim
+
+RUN npm install -g Haraka
+
+RUN haraka -i /usr/local/haraka
+
+WORKDIR /usr/local/haraka
+
+RUN npm install
+
