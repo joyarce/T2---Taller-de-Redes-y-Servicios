@@ -30,5 +30,9 @@ Una vez dentro de los contenedores respectivos, debemos configurar el lado del s
 ```diff
 vim config/smtp.ini
 ```
-
+Donde se debe establecer las lineas "listed" y "nodes" como a continuación:
+```diff
+- listen=[::0]:25,[::0]:2555
++ nodes=0
+```
 
