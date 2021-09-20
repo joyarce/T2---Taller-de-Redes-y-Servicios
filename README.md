@@ -53,3 +53,11 @@ Y se añade las siguientes dos lineas
 
 
 <h1> Uso </h1>
+
+Para hacer uso del cliente (SMTPc) , se utilizan los siguientes comandos:
+```diff
+- smtpc profiles add "Nombre perfil" --host 'ip del host' --port 'puerto a escuchar'
+- smtpc messages add "Nombre mensaje" --subject 'Titulo' --body 'Mensaje' --from 'correo@dominio.xyz' --to 'correo@dominio.xyz'
+- smtpc send --profie "Nombre perfil" --messages "Nombre mensaje"
+```
+
