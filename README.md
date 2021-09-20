@@ -35,4 +35,8 @@ Donde se debe establecer las lineas "listed" y "nodes" como a continuación:
  listen=[::0]:25,[::0]:2555
  nodes=0
 ```
-
+Luego, se debe utilizar el siguiente comando:
+```diff
+vim config/host_list
+```
+Donde se añaden los dominios de correo de preferencia, ejemplo: gmail.com, hotmail.com, etc.
