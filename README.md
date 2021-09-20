@@ -6,7 +6,7 @@ Para hacer uso de este sistema, se deben ubicar en la en la raíz del server y d
 
 En la consola del server correr:
 ```diff
-**sudo docker build -t "server_v:dockerfile" .**
+sudo docker build -t "server_v:dockerfile" .
 ```
 y luego: 
 ```diff
