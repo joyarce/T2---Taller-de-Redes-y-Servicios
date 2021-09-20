@@ -1,7 +1,7 @@
 # T2-Taller-de-Redes-y-Servicios
 Tarea 2: Instalación de servicios 
 
-
+<h1> Configuración previa </h1>
 Para hacer uso de este sistema, se deben ubicar en la en la raíz del server y del cliente (terminal diferentes).
 
 En la consola del server correr:
@@ -52,4 +52,4 @@ Y se añade las siguientes dos lineas
 ```
 
 
-<h1> Aaa </h1>
+<h1> Uso </h1>
