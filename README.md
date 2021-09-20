@@ -6,7 +6,7 @@ Para hacer uso de este sistema, se deben ubicar en la en la raíz del server y d
 
 En la consola del server correr:
 ```diff
-sudo docker build -t "server_v:dockerfile" .
+**sudo docker build -t "server_v:dockerfile" .**
 ```
 y luego: 
 ```diff
@@ -50,4 +50,6 @@ Y se añade las siguientes dos lineas
 - host=8.8.8.8 (o alguna otra ip que deseen probar)
 - port=25
 ```
+
+
 
