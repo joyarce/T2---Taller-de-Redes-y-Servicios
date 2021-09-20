@@ -32,11 +32,22 @@ vim config/smtp.ini
 ```
 Donde se debe establecer las lineas "listed" y "nodes" como a continuación:
 ```diff
- listen=[::0]:25,[::0]:2555
- nodes=0
+- listen=[::0]:25,[::0]:2555
+- nodes=0
 ```
 Luego, se debe utilizar el siguiente comando:
 ```diff
 vim config/host_list
 ```
 Donde se añaden los dominios de correo de preferencia, ejemplo: gmail.com, hotmail.com, etc.
+Y finalmente, se utiliza:
+```diff
+vim config/smtp_forward.ini
+```
+
+Y se añade las siguientes dos lineas
+```diff
+- host=8.8.8.8 (o alguna otra ip que deseen probar)
+- port=25
+```
+
