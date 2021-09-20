@@ -23,3 +23,12 @@ y luego:
 ```diff
 sudo docker run -it "cliente_v:dockerfile"
 ```
+
+Esto nos dejara el contenedor del cliente listo para usar.
+
+Una vez dentro de los contenedores respectivos, debemos configurar el lado del servidor. Para ello ejecutamos:
+```diff
+vim config/smtp.ini
+```
+
+
