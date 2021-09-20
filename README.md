@@ -8,18 +8,17 @@ En la consola del server correr:
 ```diff
 sudo docker build -t "server_v:dockerfile" .
 ```
-
 y luego: 
 ```diff
 sudo docker run -it "server_v:dockerfile"
 ```
+
 Esto nos dejara el contenedor del server listo para usar.
 
 Por otro lado, en la consola del cliente correr:
 ```diff
 sudo docker build -t "cliente_v:dockerfile" .
 ```
-
 y luego:
 ```diff
 sudo docker run -it "cliente_v:dockerfile"
