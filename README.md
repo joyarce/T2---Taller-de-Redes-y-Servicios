@@ -97,5 +97,5 @@ Repositorios de los softwares ocupados:
 Video explicativo:
 
 <a href="https://drive.google.com/file/d/1h-sSpOX3kXSaAaL8q6oVSn6nBXaUMWhz/view?usp=sharing" target="_blank">
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FGoogle_Drive&psig=AOvVaw2g_sD4j9sbUNOpZgbBWFdS&ust=1632942219075000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCPjUt_mtovMCFQAAAAAdAAAAABAD" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+<img src="" alt="LINK" width="240" height="180" border="10" />
 </a>
