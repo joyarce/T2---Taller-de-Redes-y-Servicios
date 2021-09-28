@@ -31,22 +31,25 @@ Esto nos dejara el contenedor del cliente listo para usar.
 
 Una vez que estamos dentro del container correspondiente al servidor Haraka, configuramos los siguientes ficheros existentes:
 
-> vim config/smtp.ini
-
+```diff
+vim config/smtp.ini
+```
 listen=[::0]:25,[::0]:2555
 nodes=cpus
 
 ------------------
 Para recibir por ejemplo, un correo dirigido a usuario@dominio.com, se tiene que añadir dominio.com al archivo config/host_list. En esta actividad, se utiliza un correo personal de dominio gmail.com
-
-> vim config/host_list
-
+```diff
+vim config/host_list
+```
 gmail.com
 
 ------------------
 Solo se aceptarán los mensajes a los dominios señalados en el archivo config/host_list y luego se entregarán a través del complemento smtp-forward. Por lo tanto, es necesario configurar el destino en config/smtp_forward.ini
 
-> vim config/smtp_forward.ini
+```diff
+vim config/smtp_forward.ini
+```
 
 host=smtp-relay.sendinblue.com
 port=587
@@ -60,15 +63,16 @@ check_sender=false
 ** Para guardar cambios en los archivos, ESC + :wq 
 
 Una vez finalizada la configuración inicial, se ejecuta el servidor con el comando:
+```diff
 > haraka -c .
-
+```
 
 <h1> Cliente </h1> 
 
 Una vez que estamos dentro del container  correspondiente al cliente SMTPc se realiza lo siguiente:
-
-> smtpc profiles add USER --host IP --port 25
-
+```diff
+smtpc profiles add USER --host IP --port 25
+```
 
 Para conocer la IP del Server Haraka, se deben ejecutar los siguientes comandos (en un bash independiente a donde se están ejecutando el servidor y cliente):
       > docker container ls
@@ -76,13 +80,13 @@ Para conocer la IP del Server Haraka, se deben ejecutar los siguientes comandos 
       > docker inspect <container id> | grep "IPAddress"
 
 Luego, se configura el mail
-
-> smtpc messages add Prueba --subject 'Prueba' --body 'MensajePrueba' --from correopersonal@gmail.com --to correopersonal@gmail.com
-
+```diff
+smtpc messages add Prueba --subject 'Prueba' --body 'MensajePrueba' --from correopersonal@gmail.com --to correopersonal@gmail.com
+```
 
 Finalmente, se envia el mail
-
-> smtpc send --profile USER --message Prueba
-
+```diff
+smtpc send --profile USER --message Prueba
+```
   
 
