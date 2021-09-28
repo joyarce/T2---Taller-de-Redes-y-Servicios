@@ -26,38 +26,63 @@ sudo docker run -it "cliente_v:dockerfile"
 
 Esto nos dejara el contenedor del cliente listo para usar.
 
-Una vez dentro de los contenedores respectivos, debemos configurar el lado del servidor. Para ello ejecutamos:
-```diff
-vim config/smtp.ini
-```
-Donde se debe establecer las lineas "listed" y "nodes" como a continuación:
-```diff
-- listen=[::0]:25,[::0]:2555
-- nodes=0
-```
-Luego, se debe utilizar el siguiente comando:
-```diff
-vim config/host_list
-```
-Donde se añaden los dominios de correo de preferencia, ejemplo: gmail.com, hotmail.com, etc.
-Y finalmente, se utiliza:
-```diff
-vim config/smtp_forward.ini
-```
-
-Y se añade las siguientes dos lineas
-```diff
-- host=8.8.8.8 (o alguna otra ip que deseen probar)
-- port=25
-```
+<h1> Configuración archivos servidor. </h1> 
 
 
-<h1> Uso </h1>
+Una vez que estamos dentro del container correspondiente al servidor Haraka, configuramos los siguientes ficheros existentes:
 
-Para hacer uso del cliente (SMTPc) , se utilizan los siguientes comandos:
-```diff
-- smtpc profiles add "Nombre perfil" --host 'ip del host' --port 'puerto a escuchar'
-- smtpc messages add "Nombre mensaje" --subject 'Titulo' --body 'Mensaje' --from 'correo@dominio.xyz' --to 'correo@dominio.xyz'
-- smtpc send --profie "Nombre perfil" --messages "Nombre mensaje"
-```
+> vim config/smtp.ini
+
+listen=[::0]:25,[::0]:2555
+nodes=cpus
+
+------------------
+Para recibir por ejemplo, un correo dirigido a usuario@dominio.com, se tiene que añadir dominio.com al archivo config/host_list. En esta actividad, se utiliza un correo personal de dominio gmail.com
+
+> vim config/host_list
+
+gmail.com
+
+------------------
+Solo se aceptarán los mensajes a los dominios señalados en el archivo config/host_list y luego se entregarán a través del complemento smtp-forward. Por lo tanto, es necesario configurar el destino en config/smtp_forward.ini
+
+> vim config/smtp_forward.ini
+
+host=smtp-relay.sendinblue.com
+port=587
+auth_type=plain
+auth_user= XXXXXXXXXXXX             
+auth_pass= XXXXXXXXXXXX            
+check_recipient=false
+check_sender=false
+
+
+** Para guardar cambios en los archivos, ESC + :wq 
+
+Una vez finalizada la configuración inicial, se ejecuta el servidor con el comando:
+> haraka -c .
+
+
+<h1> Cliente </h1> 
+
+Una vez que estamos dentro del container  correspondiente al cliente SMTPc se realiza lo siguiente:
+
+> smtpc profiles add USER --host IP --port 25
+
+
+Para conocer la IP del Server Haraka, se deben ejecutar los siguientes comandos (en un bash independiente a donde se están ejecutando el servidor y cliente):
+      > docker container ls
+    Se obtiene el CONTAINERID del Server
+      > docker inspect <container id> | grep "IPAddress"
+
+Luego, se configura el mail
+
+> smtpc messages add Prueba --subject 'Prueba' --body 'MensajePrueba' --from correopersonal@gmail.com --to correopersonal@gmail.com
+
+
+Finalmente, se envia el mail
+
+> smtpc send --profile USER --message Prueba
+
+  
 
