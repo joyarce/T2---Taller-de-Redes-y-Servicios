@@ -89,4 +89,9 @@ Finalmente, se envia el mail
 smtpc send --profile USER --message Prueba
 ```
   
+Repositorios de los softwares ocupados:
 
+- <a href= https://github.com/haraka/Haraka> Haraka </a>
+- <a href= https://github.com/msztolcman/smtpc> SMTPC </a>
+      
+      
