@@ -97,3 +97,5 @@ Repositorios de los softwares ocupados:
 Video explicativo:
 
 <a href="https://drive.google.com/file/d/1h-sSpOX3kXSaAaL8q6oVSn6nBXaUMWhz/view?usp=sharing" target="_blank">
+<img src="https://i0.wp.com/www.korosenai.es/wp-content/uploads/2021/01/ganyu-genshin-impact.jpg?resize=628%2C471&ssl=1" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+</a>
